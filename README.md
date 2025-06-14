@@ -27,7 +27,7 @@ The dataset consisted of a single table containing 10 columns, with multiple dat
    - Removed leading or trailing spaces and standardized capitalization in columns like `Customer_Name` and `Payment_Method` using Excel's `TRIM` and text functions to ensure uniformity.
 
 3. **Fixing Quantity Formats**  
-   - Converted all quantity values from text (example : "one") to numeric values (example : e.g., 1) for consistent quantitative analysis.
+   - Converted all quantity values from text (example : "one") to numeric values (example :1) for consistent quantitative analysis.
 
 4. **Date Column Cleanup**  
    - Identified columns such as Transaction_ID stored as General or Text data types instead of Number format, which can cause issues in data analysis, sorting, and calculations.
