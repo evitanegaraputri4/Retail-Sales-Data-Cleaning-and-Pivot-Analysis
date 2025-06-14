@@ -42,7 +42,7 @@ The dataset consisted of a single table containing 10 columns, with multiple dat
    - Identified and removed 20 fully duplicated rows to improve data integrity.
 
 **Access the cleaned dataset here:**  
-[Google Sheets - Ticket Sales Cleaned Data](https://docs.google.com/spreadsheets/d/1q9r5iwsUrB6ugBb35FmyVoIVZBihf6l-/edit?usp=sharing&ouid=111790817268098102104&rtpof=true&sd=true)
+[Google Sheets - Retail Sales Cleaned Data](https://docs.google.com/spreadsheets/d/1q9r5iwsUrB6ugBb35FmyVoIVZBihf6l-/edit?usp=sharing&ouid=111790817268098102104&rtpof=true&sd=true)
 
 
 ---
