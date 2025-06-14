@@ -98,4 +98,4 @@ The dataset consisted of a single table containing 10 columns, with multiple dat
 
 ## Access the Cleaned Dataset
 
-[Link to Google Sheets - Retail Sales Cleaned Data](#)  *()*
+[Link to Google Sheets - Retail Sales Cleaned Data](#)  *(https://docs.google.com/spreadsheets/d/1q9r5iwsUrB6ugBb35FmyVoIVZBihf6l-/edit?usp=sharing&ouid=111790817268098102104&rtpof=true&sd=true)*
