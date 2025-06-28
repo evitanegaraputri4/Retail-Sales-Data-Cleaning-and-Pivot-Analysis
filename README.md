@@ -1,4 +1,4 @@
-# Retail Sales Data Cleaning using Excel
+# Retail Data Cleaning and Pivot Analysis Project
 ## Project Overview
 This project focuses on cleaning and standardizing a retail sales dataset that initially contained inconsistent data formats, missing values, duplicate entries, and formatting irregularities across multiple columns. The raw dataset posed challenges such as inconsistent date formats, names with extra spaces and varied capitalization, and missing critical values that hindered accurate analysis and reporting. Using Microsoft Excel, I meticulously consolidated, cleaned, and standardized the dataset to enhance data quality, consistency, and integrity, preparing it for reliable analysis and visualization. In addition to data cleaning, the project includes comprehensive **PivotTable-based analysis** to uncover key insights into product performance, customer behavior, seasonal trends, city-wise distribution, and discount patterns. These summaries support actionable business recommendations across sales, marketing, product, and fulfillment strategies.
 
