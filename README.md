@@ -19,74 +19,74 @@ The dataset consisted of a single table containing 10 columns, with multiple dat
 
 ### Data Cleaning & Standardization Steps
 
-1. **Handling Missing Values**  
-   - Recategorized missing values in categorical columns such as `Customer_Name`, `Product_Name`, and `Payment_Method` as `"Unknown"` to clearly mark incomplete records.  
-   - Left missing numeric values like `Quantity`, `Price_Per_Unit`, and `Discount_Percentage` as is with `"Unknown"` placeholders where inference was not possible, noting these for further stakeholder review.
+1. **Standardizing Customer Names**
+   - Trimmed extra spaces and unified name casing.
+   - Replaced 12 missing names with `"Na"` placeholder.
 
-2. **Standardizing Text Data**  
-   - Removed leading or trailing spaces and standardized capitalization in columns like `Customer_Name` and `Payment_Method` using Excel's `TRIM` and text functions to ensure uniformity.
+2. **Handling Missing Products**
+   - Replaced 30 missing product names with `"Na"`.
 
-3. **Fixing Quantity Formats**  
-   - Converted all quantity values from text (example : "one") to numeric values (example :1) for consistent quantitative analysis.
+3. **Fixing Quantity Format**
+   - Converted all quantity values from words (e.g., “Two”) to numeric values (e.g., `2`) for 1990 rows.
 
-4. **Date Column Cleanup**  
-   - Identified columns such as Transaction_ID stored as General or Text data types instead of Number format, which can cause issues in data analysis, sorting, and calculations.
-   - Dates were stored in General or Text formats rather than Excel’s proper Date format, leading to challenges in date-based operations like sorting, filtering, and calculations.
-   - Applied Excel’s date conversion functions to transform text dates into standardized Date format, enabling accurate time-based analysis.  
-   - Unified various date formats such as `"14-Jul-2023"`, `"23/12/2023"`, and `"2023-06-14"` into a consistent format.
+4. **Date Standardization**
+   - Used Excel parsing functions to convert all dates to `DD/MM/YYYY` format.
+   - Supported formats like `2024-10-15`, `14-Aug-2024`, and `03/04/2025`.
 
-5. **Standardizing Store Location**  
-   - Corrected inconsistent spellings and abbreviations of store locations (e.g., `"LA"` vs `"Los Angeles"`, `"Chi Town"` vs `"Chicago"`), unifying them for accurate grouping and reporting.
+5. **Location Name Cleanup**
+   - Standardized city names using a reference table and `XLOOKUP`, resolving abbreviations like `LA`, `Chi-Town`, and `SF`.
 
-6. **Removing Duplicates**  
-   - Identified and removed 20 fully duplicated rows to improve data integrity.
+6. **Fixing Payment Method Inconsistencies**
+   - Replaced 12 missing values with `"Na"`.
+   - Standardized capitalization (e.g., `paypal` → `PayPal`) for 1003 records.
+
+7. **Adding New Calculated Columns**
+   - `Sales = Quantity × Price`
+   - `Net Sales = Quantity × Price × (1 - Discount%)`
 
 **Access the cleaned dataset here:**  
-[Google Sheets - Retail Sales Cleaned Data](https://docs.google.com/spreadsheets/d/1q9r5iwsUrB6ugBb35FmyVoIVZBihf6l-/edit?usp=sharing&ouid=111790817268098102104&rtpof=true&sd=true)
-
+[Google Sheets - Retail Sales Cleaned Data]
 
 ---
 
 ## Dataset Summary
-
-| Aspect                  | Before Cleaning                 | After Cleaning                                |
-|-------------------------|--------------------------------|-----------------------------------------------|
-| Total Columns           | 10                             | 12 (after adding cleaned and standardized columns)  |
-| Duplicate Rows          | Present (20 duplicates)         | Removed duplicates                            |
-| Missing Values          | Present in multiple columns     | Recategorized or documented for stakeholder input |
-| Inconsistent Date Format| Dates stored as Text/General   | Converted to uniform proper Date format      |
-| Inconsistent Text Format| Extra spaces, inconsistent caps| Trimmed and standardized capitalization      |
-| Quantity Format         | Mixed numeric and text         | Converted all to numeric format               |
-| Store Location Names    | Multiple inconsistent spellings| Standardized names                            |
+| Aspect                      | Before Cleaning                          | After Cleaning                                |
+|-----------------------------|-------------------------------------------|-----------------------------------------------|
+| Total Rows                  | 1990                                      | 1990                                          |
+| Missing Customer Names      | 12                                        | Replaced with `"Na"`                          |
+| Missing Product Names       | 30                                        | Replaced with `"Na"`                          |
+| Quantity as Words           | e.g., "Two", "Three"                      | Converted to numeric                          |
+| Inconsistent Date Formats   | Mixed (Text, General, Various styles)     | Unified to DD/MM/YYYY                         |
+| Inconsistent City Names     | Abbreviations (LA, SF, Chi-Town)          | Standardized full names                       |
+| Inconsistent Payment Names  | Capitalization and typos                  | Proper case applied                           |
+| New Columns Added           | Sales, Net Sales                          | Calculated and validated                      |
 
 ---
 
 ## Data Cleaning Documentation
 
-| No | Table        | Column             | Issue                                                        | Row Count | Solvable? | Resolution                                                                                      |
-|-----|--------------|--------------------|--------------------------------------------------------------|-----------|-----------|-------------------------------------------------------------------------------------------------|
-| 1   | Retail Sales | Customer_Name      | Missing values                                               | 51        | Yes       | Recategorized missing values as "Unknown"                                                     |
-| 2   | Retail Sales | Customer_Name      | Inconsistent names, extra spaces, and capitalization         | -         | Yes       | Standardized names by trimming spaces and unifying capitalization                             |
-| 3   | Retail Sales | Product_Name       | Missing values                                               | 51        | Yes       | Recategorized missing values as "Unknown"                                                     |
-| 4   | Retail Sales | Quantity           | Missing values                                               | 3         | No        | Left as is, with "Unknown" placeholders, requires stakeholder review                          |
-| 5   | Retail Sales | Quantity           | Inconsistent formats: words ("one") vs numbers ("1")         | 347       | Yes       | Converted all quantity values to numeric format                                               |
-| 6   | Retail Sales | Price_Per_Unit     | Missing values                                               | 164       | No        | Left as is; missing prices marked "Unknown"                                                  |
-| 7   | Retail Sales | Purchase_Date      | Missing values and inconsistent data type (dates stored as text/General) | 50        | No        | Left as is with "Unknown"; converted text dates to proper Date format                         |
-| 8   | Retail Sales | Purchase_Date      | Inconsistent date formats                                     | 814       | Yes       | Standardized dates to consistent format using Excel date functions                            |
-| 9   | Retail Sales | Store_Location     | Inconsistent spelling and abbreviations                      | -         | Yes       | Standardized store location names                                                            |
-| 10  | Retail Sales | Payment_Method     | Missing values                                               | 128       | Yes       | Recategorized missing values as "Unknown"                                                    |
-| 11  | Retail Sales | Payment_Method     | Inconsistent capitalization                                  | 724       | Yes       | Standardized payment method capitalization                                                   |
-| 12  | Retail Sales | Discount_Percentage| Missing values                                               | 193       | No        | Left as is with "Unknown"; zero retained for no discount                                     |
-| 13  | Retail Sales | -                  | Duplicate rows                                              | 20        | Yes       | Removed duplicates to ensure data quality                                                    |
+| No | Table           | Issue                                                                 | Row Count | Solvable? | Resolution                                                                 |
+|----|------------------|------------------------------------------------------------------------|-----------|-----------|----------------------------------------------------------------------------|
+| 1  | Customer Name     | Inconsistent names and spacing                                         | 1990      | Yes       | Trimmed and standardized capitalization                                   |
+| 2  | Customer Name     | Missing values                                                         | 12        | Yes       | Replaced with `"Na"`                                                       |
+| 3  | Product           | Missing values                                                         | 30        | Yes       | Replaced with `"Na"`                                                       |
+| 4  | Quantity          | Text format ("Two", "One") instead of numbers                          | 1990      | Yes       | Converted to numbers                                                       |
+| 5  | Date              | Inconsistent formats (DD/MM/YYYY, YYYY-MM-DD, etc.)                    | 1990      | Yes       | Standardized using parsing functions                                      |
+| 6  | City              | Abbreviations and inconsistent names (e.g., "LA", "Chi Town")          | 103       | Yes       | Standardized via `XLOOKUP` and reference list                             |
+| 7  | Payment Method    | Missing values                                                         | 12        | Yes       | Replaced with `"Na"`                                                       |
+| 8  | Payment Method    | Inconsistent casing (e.g., "paypal", "cash")                           | 1003      | Yes       | Standardized to proper case                                                |
+| 9  | Sales             | Not originally present                                                 | 1990      | Yes       | Added `Sales = Quantity × Price`                                           |
+| 10 | Net Sales         | Not originally present                                                 | 1990      | Yes       | Added `Net Sales = Quantity × Price × (1 - Discount / 100)`               |
 
 ---
+## 
 
 ## Next Steps & Recommendations
 
-- Collaborate with stakeholders to clarify missing and ambiguous data points, especially for numeric and date columns with incomplete values.  
-- Normalize currency values or convert all amounts to a consistent currency format for financial analysis.  
-- Implement automated validation and cleaning workflows using Excel macros or Python scripts for future data ingestion to reduce manual effort.  
-- Conduct exploratory data analysis (EDA) and build interactive dashboards to visualize sales trends and customer behavior insights.
+- Review remaining placeholder `"Na"` or missing numeric fields with stakeholders for clarification.
+- Apply data validation rules or automated Power Query/Macros for future data collection consistency.
+- Extend analysis with Power BI dashboards or pivot charts for more insightful reporting.
+- Export cleaned data into a database or cloud storage for scalable access.
 
 ---
 
@@ -99,5 +99,124 @@ The dataset consisted of a single table containing 10 columns, with multiple dat
 
 
 ---
+# Retail Sales Data Cleaning using Excel
 
+## Project Overview
+
+This project involved cleaning and standardizing a retail sales dataset containing multiple inconsistencies and data quality issues. The raw data included challenges such as inconsistent date formats, misspellings, varied capitalization, and missing values in critical columns like product names and payment methods. Using Microsoft Excel, I transformed the dataset to ensure accuracy, consistency, and readiness for deeper analysis and visualization.
+
+---
+
+## Tools Used
+
+- Microsoft Excel
+
+---
+
+## Cleaning Process
+
+### Initial Data
+
+The dataset consisted of 12 columns and 1990 rows, with the following key issues:
+
+- Missing values in customer, product, and payment method fields  
+- Inconsistent text formatting (capitalization, extra spaces)  
+- Dates in mixed formats like `2024/11/09`, `14-Aug-2024`, `2025-05-22`, etc.  
+- Quantity values entered as words (e.g., “Two”) instead of numbers  
+- Abbreviated or misspelled city names (e.g., `LA`, `Chi Town`)  
+- No original `Sales` or `Net Sales` columns  
+
+---
+
+### Data Cleaning & Standardization Steps
+
+1. **Standardizing Customer Names**
+   - Trimmed extra spaces and unified name casing.
+   - Replaced 12 missing names with `"Na"` placeholder.
+
+2. **Handling Missing Products**
+   - Replaced 30 missing product names with `"Na"`.
+
+3. **Fixing Quantity Format**
+   - Converted all quantity values from words (e.g., “Two”) to numeric values (e.g., `2`) for 1990 rows.
+
+4. **Date Standardization**
+   - Used Excel parsing functions to convert all dates to `DD/MM/YYYY` format.
+   - Supported formats like `2024-10-15`, `14-Aug-2024`, and `03/04/2025`.
+
+5. **Location Name Cleanup**
+   - Standardized city names using a reference table and `XLOOKUP`, resolving abbreviations like `LA`, `Chi-Town`, and `SF`.
+
+6. **Fixing Payment Method Inconsistencies**
+   - Replaced 12 missing values with `"Na"`.
+   - Standardized capitalization (e.g., `paypal` → `PayPal`) for 1003 records.
+
+7. **Adding New Calculated Columns**
+   - `Sales = Quantity × Price`
+   - `Net Sales = Quantity × Price × (1 - Discount%)`
+
+---
+
+## Dataset Summary
+
+| Aspect                      | Before Cleaning                          | After Cleaning                                |
+|-----------------------------|-------------------------------------------|-----------------------------------------------|
+| Total Rows                  | 1990                                      | 1990                                          |
+| Missing Customer Names      | 12                                        | Replaced with `"Na"`                          |
+| Missing Product Names       | 30                                        | Replaced with `"Na"`                          |
+| Quantity as Words           | e.g., "Two", "Three"                      | Converted to numeric                          |
+| Inconsistent Date Formats   | Mixed (Text, General, Various styles)     | Unified to DD/MM/YYYY                         |
+| Inconsistent City Names     | Abbreviations (LA, SF, Chi-Town)          | Standardized full names                       |
+| Inconsistent Payment Names  | Capitalization and typos                  | Proper case applied                           |
+| New Columns Added           | Sales, Net Sales                          | Calculated and validated                      |
+
+---
+
+## Data Cleaning Documentation
+
+| No | Table           | Issue                                                                 | Row Count | Solvable? | Resolution                                                                 |
+|----|------------------|------------------------------------------------------------------------|-----------|-----------|----------------------------------------------------------------------------|
+| 1  | Customer Name     | Inconsistent names and spacing                                         | 1990      | Yes       | Trimmed and standardized capitalization                                   |
+| 2  | Customer Name     | Missing values                                                         | 12        | Yes       | Replaced with `"Na"`                                                       |
+| 3  | Product           | Missing values                                                         | 30        | Yes       | Replaced with `"Na"`                                                       |
+| 4  | Quantity          | Text format ("Two", "One") instead of numbers                          | 1990      | Yes       | Converted to numbers                                                       |
+| 5  | Date              | Inconsistent formats (DD/MM/YYYY, YYYY-MM-DD, etc.)                    | 1990      | Yes       | Standardized using parsing functions                                      |
+| 6  | City              | Abbreviations and inconsistent names (e.g., "LA", "Chi Town")          | 103       | Yes       | Standardized via `XLOOKUP` and reference list                             |
+| 7  | Payment Method    | Missing values                                                         | 12        | Yes       | Replaced with `"Na"`                                                       |
+| 8  | Payment Method    | Inconsistent casing (e.g., "paypal", "cash")                           | 1003      | Yes       | Standardized to proper case                                                |
+| 9  | Sales             | Not originally present                                                 | 1990      | Yes       | Added `Sales = Quantity × Price`                                           |
+| 10 | Net Sales         | Not originally present                                                 | 1990      | Yes       | Added `Net Sales = Quantity × Price × (1 - Discount / 100)`               |
+
+---
+
+## Screenshots
+
+- **Initial Dataset (Before Cleaning):**  
+  ![Raw Data Issues](https://github.com/user/repo/assets/initial-dirty-data.png)
+
+- **Cleaned Dataset (After Cleaning):**  
+  ![Cleaned Data Preview](https://github.com/user/repo/assets/cleaned-data-view.png)
+
+- **Pivot Table Insights:**
+  - Net Sales by City and Product  
+    ![Net Sales Pivot](https://github.com/user/repo/assets/net-sales-by-city-category.png)
+  - Monthly Net Sales  
+    ![Monthly Sales Pivot](https://github.com/user/repo/assets/monthly-net-sales.png)
+
+---
+
+## Next Steps & Recommendations
+
+- Review remaining placeholder `"Na"` or missing numeric fields with stakeholders for clarification.
+- Apply data validation rules or automated Power Query/Macros for future data collection consistency.
+- Extend analysis with Power BI dashboards or pivot charts for more insightful reporting.
+- Export cleaned data into a database or cloud storage for scalable access.
+
+---
+
+## Access the Cleaned Data
+
+📁 [Retail Sales Cleaned Dataset (Google Sheets)](https://docs.google.com/spreadsheets/d/1q9r5iwsUrB6ugBb35FmyVoIVZBihf6l-/edit?usp=sharing)
+
+---
 
