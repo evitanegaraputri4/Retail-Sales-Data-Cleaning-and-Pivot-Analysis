@@ -96,7 +96,9 @@ The dataset consisted of a single table containing 10 columns, with multiple dat
 - Jeans and Watch follow closely, with minimal difference between sales and net sales.
 - Smartphone shows the largest relative drop between sales and net sales.
 - Product categories exhibit consistent discount behavior, as the gap between sales and net sales remains relatively narrow across the board.
-![image](https://github.com/user-attachments/assets/4b4edd1b-61f9-4155-9de5-9bf1b2d12fa1)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4b4edd1b-61f9-4155-9de5-9bf1b2d12fa1" alt="Data Cleaning Pivot Table Screenshot" width="700"/>
+</p>
 
 
 ---
@@ -105,7 +107,10 @@ The dataset consisted of a single table containing 10 columns, with multiple dat
 - Most product categories receive an average discount of 8%, indicating a uniform pricing strategy.
 - Headphones, Jeans, and Blender are offered at 7% on average , slightly below other
 - The overall average discount across all categories is stable at 8%, which suggests a controlled promotional policy.
-![image](https://github.com/user-attachments/assets/f5c5d28f-38c6-4696-866e-c24e61809c96)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f5c5d28f-38c6-4696-866e-c24e61809c96" alt="Cleaned Data Sample" width="700"/>
+</p>
+
 
 
 ---
@@ -113,7 +118,10 @@ The dataset consisted of a single table containing 10 columns, with multiple dat
 ### 3. Top 5 Customers by Net Sales
 - Jason Bond, Dillon King, and Casey Diaz are the top contributors to revenue, collectively accounting for more than 20% of the top 5 segment's sales.
 - The highest individual net sale is over 61,000 units, highlighting strong customer loyalty or bulk purchasing.
-  ![image](https://github.com/user-attachments/assets/05ebc71d-9c64-4fa8-88f8-df2c8715627f)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/05ebc71d-9c64-4fa8-88f8-df2c8715627f" alt="Retail Sales Pivot Table Visual" width="700"/>
+</p>
+
 
 
 ---
@@ -122,7 +130,10 @@ The dataset consisted of a single table containing 10 columns, with multiple dat
 - Ryan Moore leads the average net sales per order, followed closely by Jason Bond and Austin Perry.
 - All top 10 customers have average sales within a narrow band (around 2,700–3,000), showing consistent spending patterns.
 - This suggests a stable high-value customer group that could be targeted for premium offers or loyalty incentives.
-![image](https://github.com/user-attachments/assets/3cb108f5-f6e1-47e6-ba0b-603c0ac3b0c6)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/3cb108f5-f6e1-47e6-ba0b-603c0ac3b0c6" alt="Retail Sales Pivot Chart - Monthly Net Sales" width="700"/>
+</p>
+
 
 ---
 
@@ -130,7 +141,10 @@ The dataset consisted of a single table containing 10 columns, with multiple dat
 - April is the top-performing month, followed by March and June, indicating strong sales activity in Q2.
 - November and December are the lowest-performing months, possibly due to seasonality.
 - The overall distribution shows a steady mid-year peak with a gradual decline toward year-end, indicating potential for seasonal promotion planning.
-![image](https://github.com/user-attachments/assets/546a2330-c3ff-4b9e-be71-1ef155343a80)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/546a2330-c3ff-4b9e-be71-1ef155343a80" alt="Retail Sales Pivot Table Chart" width="700"/>
+</p>
+
 
 ---
 
@@ -138,7 +152,10 @@ The dataset consisted of a single table containing 10 columns, with multiple dat
 - New York is the leading city across all product categories, driven by strong performance in Sports, Electronics, and Clothing.
 - Los Angeles and San Francisco follow, with relatively even category performance, though LA shows stronger sales in Toys and Electronics.
 - Houston contributes the least, reflecting either a smaller customer base or lower promotional penetration in that region.
-  ![image](https://github.com/user-attachments/assets/7057479f-423e-402f-a7d6-b9fd300958fe)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/7057479f-423e-402f-a7d6-b9fd300958fe" alt="Retail Sales Analysis Chart" width="700"/>
+</p>
+
 
 ---
 
@@ -146,7 +163,9 @@ The dataset consisted of a single table containing 10 columns, with multiple dat
 - Cash is still dominant in New York, while Debit Card and PayPal see widespread use across all cities.
 - Credit Card is slightly less used overall, but remains consistent across cities.
 - Houston has the lowest total number of transactions, across all payment types — possibly correlating with its overall lower sales volume.
-  ![image](https://github.com/user-attachments/assets/b34661d4-60eb-4579-ae39-c49246916984)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b34661d4-60eb-4579-ae39-c49246916984" alt="Retail Sales Analysis Chart" width="700"/>
+</p>
 
 ---
 
@@ -154,7 +173,10 @@ The dataset consisted of a single table containing 10 columns, with multiple dat
 - New York again leads with the highest product volume across all categories, especially in Blender, Headphones, and Watch.
 - Los Angeles and San Francisco follow closely with strong performance in Smartphones and T-shirts.
 - Houston shows notably lower volumes, particularly in Jeans and Watch, which may indicate either lower demand or inventory constraints.
-![image](https://github.com/user-attachments/assets/5041fb73-58ef-4d2a-bbd4-b6e5e109578c)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5041fb73-58ef-4d2a-bbd4-b6e5e109578c" alt="Retail Sales Pivot Chart" width="700"/>
+</p>
+
 
 ---
 
