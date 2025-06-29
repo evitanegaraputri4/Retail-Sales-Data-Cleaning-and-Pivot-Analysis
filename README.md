@@ -17,28 +17,28 @@ The dataset consisted of a single table containing 10 columns, with multiple dat
 ## Data Cleaning & Standardization Steps
 ### Standardizing Customer Names
 - Trimmed extra spaces and unified name casing.
-- Replaced 12 missing names with `"Na"` placeholder.
+- Replaced 12 missing names with Na placeholder.
 
-2. **Handling Missing Products**
-   - Replaced 30 missing product names with `"Na"`.
+## Handling Missing Products
+- Replaced 30 missing product names with Na.
 
-3. **Fixing Quantity Format**
-   - Converted all quantity values from words (e.g., “Two”) to numeric values (e.g., `2`) for 1990 rows.
+## Fixing Quantity Format
+- Converted all quantity values from words (e.g., Two) to numeric values (e.g., 2) for 1990 rows.
 
-4. **Date Standardization**
-   - Used Excel parsing functions to convert all dates to `DD/MM/YYYY` format.
-   - Supported formats like `2024-10-15`, `14-Aug-2024`, and `03/04/2025`.
+## Date Standardization
+- Used Excel parsing functions to convert all dates to DD/MM/YYYY format.
+- Supported formats like 2024-10-15, 14-Aug-2024, and 03/04/2025.
 
-5. **Location Name Cleanup**
-   - Standardized city names using a reference table and `XLOOKUP`, resolving abbreviations like `LA`, `Chi-Town`, and `SF`.
+## ocation Name Cleanup
+- Standardized city names using a reference table and XLOOKUP, resolving abbreviations like LA, Chi-Town, and SF`
 
-6. **Fixing Payment Method Inconsistencies**
-   - Replaced 12 missing values with `"Na"`.
-   - Standardized capitalization (e.g., `paypal` → `PayPal`) for 1003 records.
+## Fixing Payment Method Inconsistencies
+- Replaced 12 missing values with Na.
+- Standardized capitalization (e.g., paypal → PayPal) for 1003 records.
 
-7. **Adding New Calculated Columns**
-   - `Sales = Quantity × Price`
-   - `Net Sales = Quantity × Price × (1 - Discount%)`
+## Adding New Calculated Columns
+- sales = Quantity × Price
+- Net Sales = Quantity × Price × (1 - Discount%)
 
 **Access the cleaned dataset here:**  
 [Google Sheets - Retail Sales Cleaned Data](https://docs.google.com/spreadsheets/d/1oJ_ZdMK6iivUYQWF3b1fR8tFILfX5cu8/edit?usp=sharing&ouid=111790817268098102104&rtpof=true&sd=true)
@@ -86,8 +86,8 @@ The dataset consisted of a single table containing 10 columns, with multiple dat
 
 
 ## 
-## 📈 Pivot Table Analysis & Insights
-### 1. Net Sales vs. Total Sales by Product Category
+## Pivot Table Analysis & Insights
+###  Net Sales vs. Total Sales by Product Category
 - Blender leads both total and net sales, indicating it is a consistently high-performing item, even after discounts.
 - Jeans and Watch follow closely, with minimal difference between sales and net sales.
 - Smartphone shows the largest relative drop between sales and net sales.
@@ -99,7 +99,7 @@ The dataset consisted of a single table containing 10 columns, with multiple dat
 
 ---
 
-### 2. Average Discount by Category
+### Average Discount by Category
 - Most product categories receive an average discount of 8%, indicating a uniform pricing strategy.
 - Headphones, Jeans, and Blender are offered at 7% on average , slightly below other
 - The overall average discount across all categories is stable at 8%, which suggests a controlled promotional policy.
@@ -111,7 +111,7 @@ The dataset consisted of a single table containing 10 columns, with multiple dat
 
 ---
 
-### 3. Top 5 Customers by Net Sales
+### Top 5 Customers by Net Sales
 - Jason Bond, Dillon King, and Casey Diaz are the top contributors to revenue, collectively accounting for more than 20% of the top 5 segment's sales.
 - The highest individual net sale is over 61,000 units, highlighting strong customer loyalty or bulk purchasing.
 <p align="center">
@@ -122,7 +122,7 @@ The dataset consisted of a single table containing 10 columns, with multiple dat
 
 ---
 
-### 4. Average Net Sales by Top 10 Customers
+### Average Net Sales by Top 10 Customers
 - Ryan Moore leads the average net sales per order, followed closely by Jason Bond and Austin Perry.
 - All top 10 customers have average sales within a narrow band (around 2,700–3,000), showing consistent spending patterns.
 - This suggests a stable high-value customer group that could be targeted for premium offers or loyalty incentives.
@@ -133,7 +133,7 @@ The dataset consisted of a single table containing 10 columns, with multiple dat
 
 ---
 
-### 5. Monthly Net Sales Summary
+### Monthly Net Sales Summary
 - April is the top-performing month, followed by March and June, indicating strong sales activity in Q2.
 - November and December are the lowest-performing months, possibly due to seasonality.
 - The overall distribution shows a steady mid-year peak with a gradual decline toward year-end, indicating potential for seasonal promotion planning.
@@ -144,7 +144,7 @@ The dataset consisted of a single table containing 10 columns, with multiple dat
 
 ---
 
-### 7. Net Sales by Category & City
+### Net Sales by Category & City
 - New York is the leading city across all product categories, driven by strong performance in Sports, Electronics, and Clothing.
 - Los Angeles and San Francisco follow, with relatively even category performance, though LA shows stronger sales in Toys and Electronics.
 - Houston contributes the least, reflecting either a smaller customer base or lower promotional penetration in that region.
@@ -155,7 +155,7 @@ The dataset consisted of a single table containing 10 columns, with multiple dat
 
 ---
 
-### 8. Payment Method by City
+### Payment Method by City
 - Cash is still dominant in New York, while Debit Card and PayPal see widespread use across all cities.
 - Credit Card is slightly less used overall, but remains consistent across cities.
 - Houston has the lowest total number of transactions, across all payment types — possibly correlating with its overall lower sales volume.
@@ -165,7 +165,7 @@ The dataset consisted of a single table containing 10 columns, with multiple dat
 
 ---
 
-### 9. Product Sales Volume by City
+### Product Sales Volume by City
 - New York again leads with the highest product volume across all categories, especially in Blender, Headphones, and Watch.
 - Los Angeles and San Francisco follow closely with strong performance in Smartphones and T-shirts.
 - Houston shows notably lower volumes, particularly in Jeans and Watch, which may indicate either lower demand or inventory constraints.
@@ -177,33 +177,33 @@ The dataset consisted of a single table containing 10 columns, with multiple dat
 ---
 
 ## Recommendations
-### 1. Sales Trend Optimization
+### Sales Trend Optimization
 - Boost November Performance: November is the lowest net sales month. Launch aggressive sales events like Black Friday flash deals and “Buy More, Save More” offers to reverse the dip.
 - Pre-April Campaigns: April ranks highest in net sales—test pre-spring exclusives or loyalty-first launches in March to build momentum.
 - Created Monthly Email Calendar: Align discount depth with seasonal trends. Use a rotating monthly schedule (e.g., % off in slow months, bundles in peak months).
 - Retargeting Strategy: Reactivate low-engagement months via Meta/Google ads that promote high-appeal products like Blender and Jeans.
 ---
 
-### 2. Product Line Optimization
+### Product Line Optimization
 - Upsell High Revenue Products: Promote Blender, Jeans, and Watch using tiered bundles, seasonal kits, or influencer tutorials (especially for Blender).
 - Address Low Net Margin Items: Products like Smartphone show high discounts. Consider revising pricing or bundling with low-cost accessories to protect margin.
 
 ---
 
-### 3. Customer Retention & Growth
+### Customer Retention & Growth
 - Reward High-Value Customers: Jason Bond and Dillon King lead in net sales. Target your top 5% of customers with VIP campaigns and early-bird promos.
 - Maximize Customer Lifetime Value: Use average net sales data to offer subscription-like product refreshes (e.g., biannual clothing bundles).
 - Revive Lapsed Buyers: Identify one-time buyers from Jan–Mar and create personalized email flows offering discounts based on prior items.
 
 ---
 
-### 4. City-Focused Marketing
+### City-Focused Marketing
 - Double Down on New York: NY leads in product volume and net sales. Offer same-day shipping, city-specific promo codes, and pickup points to reinforce dominance.
 - Expand in Houston & Chicago: These cities show strong product diversity but lower totals—test “Free Shipping Week” or local influencer collabs.
 - Geo-Test Bundled Discounts: Launch combo offers (e.g., Watch + Jeans) in Los Angeles to drive higher order values.
 ---
 
-### 5. Discount Strategy
+### Discount Strategy
 - Limit Blanket Discounts: With average discounts hovering around 8%, reserve high discounts for low-performing products. 
 - Run “Limited Quantity” Drops: T-shirt and Smartphone categories should feature exclusive short-run discounts to create urgency.
 ---
