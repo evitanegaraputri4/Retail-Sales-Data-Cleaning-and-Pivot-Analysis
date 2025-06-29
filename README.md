@@ -14,7 +14,7 @@ This project focuses on cleaning and standardizing a retail sales dataset that i
 ### Initial Data
 The dataset consisted of a single table containing 10 columns, with multiple data quality issues including missing values, inconsistent text formatting, inconsistent date formats (some dates were stored as text or General format instead of proper Date format), and duplicate rows.
 
-## Data Cleaning & Standardization Steps
+### Data Cleaning & Standardization Steps
 ### Standardizing Customer Names
 - Trimmed extra spaces and unified name casing.
 - Replaced 12 missing names with Na placeholder.
