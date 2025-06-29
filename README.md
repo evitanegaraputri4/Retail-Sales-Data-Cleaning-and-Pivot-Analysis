@@ -45,20 +45,6 @@ The dataset consisted of a single table containing 10 columns, with multiple dat
 
 ---
 
-## Dataset Summary
-| Aspect                      | Before Cleaning                          | After Cleaning                                |
-|-----------------------------|-------------------------------------------|-----------------------------------------------|
-| Total Rows                  | 1990                                      | 1990                                          |
-| Missing Customer Names      | 12                                        | Replaced with `"Na"`                          |
-| Missing Product Names       | 30                                        | Replaced with `"Na"`                          |
-| Quantity as Words           | e.g., "Two", "Three"                      | Converted to numeric                          |
-| Inconsistent Date Formats   | Mixed (Text, General, Various styles)     | Unified to DD/MM/YYYY                         |
-| Inconsistent City Names     | Abbreviations (LA, SF, Chi-Town)          | Standardized full names                       |
-| Inconsistent Payment Names  | Capitalization and typos                  | Proper case applied                           |
-| New Columns Added           | Sales, Net Sales                          | Calculated and validated                      |
-
----
-
 ## Data Cleaning Documentation
 
 | No | Table           | Issue                                                                 | Row Count | Solvable? | Resolution                                                                 |
