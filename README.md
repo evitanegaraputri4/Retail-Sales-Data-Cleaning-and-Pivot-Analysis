@@ -29,8 +29,8 @@ The dataset consisted of a single table containing 10 columns, with multiple dat
 - Used Excel parsing functions to convert all dates to DD/MM/YYYY format.
 - Supported formats like 2024-10-15, 14-Aug-2024, and 03/04/2025.
 
-## ocation Name Cleanup
-- Standardized city names using a reference table and XLOOKUP, resolving abbreviations like LA, Chi-Town, and SF`
+## Location Name Cleanup
+- Standardized city names using a reference table and XLOOKUP, resolving abbreviations like LA, Chi-Town, and SF.
 
 ## Fixing Payment Method Inconsistencies
 - Replaced 12 missing values with Na.
