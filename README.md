@@ -15,28 +15,28 @@ This project focuses on cleaning and standardizing a retail sales dataset that i
 The dataset consisted of a single table containing 10 columns, with multiple data quality issues including missing values, inconsistent text formatting, inconsistent date formats (some dates were stored as text or General format instead of proper Date format), and duplicate rows.
 
 ### Data Cleaning & Standardization Steps
-# 1. Standardizing Customer Names
+#### 1. Standardizing Customer Names
 - Trimmed extra spaces and unified name casing.
 - Replaced 12 missing names with Na placeholder.
 
-# 2. Handling Missing Products
+#### 2. Handling Missing Products
 - Replaced 30 missing product names with Na.
 
-# 3. Fixing Quantity Format
+#### 3. Fixing Quantity Format
 - Converted all quantity values from words (e.g., Two) to numeric values (e.g., 2) for 1990 rows.
 
-# 4. Date Standardization
+#### 4. Date Standardization
 - Used Excel parsing functions to convert all dates to DD/MM/YYYY format.
 - Supported formats like 2024-10-15, 14-Aug-2024, and 03/04/2025.
 
-# 5. Location Name Cleanup
+#### 5. Location Name Cleanup
 - Standardized city names using a reference table and XLOOKUP, resolving abbreviations like LA, Chi-Town, and SF.
 
-# 6. Fixing Payment Method Inconsistencies
+#### 6. Fixing Payment Method Inconsistencies
 - Replaced 12 missing values with Na.
 - Standardized capitalization (e.g., paypal → PayPal) for 1003 records.
 
-# 7. Adding New Calculated Columns
+#### 7. Adding New Calculated Columns
 - sales = Quantity × Price
 - Net Sales = Quantity × Price × (1 - Discount%)
 
