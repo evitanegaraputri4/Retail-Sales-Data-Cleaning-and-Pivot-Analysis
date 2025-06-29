@@ -44,7 +44,7 @@ The dataset consisted of a single table containing 10 columns, with multiple dat
    - `Net Sales = Quantity × Price × (1 - Discount%)`
 
 **Access the cleaned dataset here:**  
-[Google Sheets - Retail Sales Cleaned Data]
+[Google Sheets - Retail Sales Cleaned Data](https://docs.google.com/spreadsheets/d/1oJ_ZdMK6iivUYQWF3b1fR8tFILfX5cu8/edit?usp=sharing&ouid=111790817268098102104&rtpof=true&sd=true)
 
 ---
 
