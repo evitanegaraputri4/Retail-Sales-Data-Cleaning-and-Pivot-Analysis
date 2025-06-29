@@ -5,7 +5,6 @@ This project focuses on cleaning and standardizing a retail sales dataset that i
 ---
 
 ## Tools Used
-
 - Microsoft Excel (Data Cleaning and Pivot Tables)
 - Power Query (for date parsing and transformation)
 ---
@@ -13,11 +12,9 @@ This project focuses on cleaning and standardizing a retail sales dataset that i
 ## Cleaning Process
 
 ### Initial Data
-
 The dataset consisted of a single table containing 10 columns, with multiple data quality issues including missing values, inconsistent text formatting, inconsistent date formats (some dates were stored as text or General format instead of proper Date format), and duplicate rows.
 
 ### Data Cleaning & Standardization Steps
-
 1. **Standardizing Customer Names**
    - Trimmed extra spaces and unified name casing.
    - Replaced 12 missing names with `"Na"` placeholder.
@@ -90,7 +87,6 @@ The dataset consisted of a single table containing 10 columns, with multiple dat
 
 ## 
 ## 📈 Pivot Table Analysis & Insights
-
 ### 1. Net Sales vs. Total Sales by Product Category
 - Blender leads both total and net sales, indicating it is a consistently high-performing item, even after discounts.
 - Jeans and Watch follow closely, with minimal difference between sales and net sales.
@@ -181,7 +177,6 @@ The dataset consisted of a single table containing 10 columns, with multiple dat
 ---
 
 ## Recommendations
-
 ### 1. Sales Trend Optimization
 - Boost November Performance: November is the lowest net sales month. Launch aggressive sales events like Black Friday flash deals and “Buy More, Save More” offers to reverse the dip.
 - Pre-April Campaigns: April ranks highest in net sales—test pre-spring exclusives or loyalty-first launches in March to build momentum.
